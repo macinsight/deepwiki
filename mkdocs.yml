@@ -9,7 +9,24 @@ theme:
     scheme: slate
     primary: deep purple
     accent: deep purple
+  features:
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - toc.follow
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 plugins:
   - search
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/23Y2bZCtbP
+      name: DeepNet Discord
