@@ -39,6 +39,12 @@ extra:
 
 nav:
   - Home: index.md
+  - Lore:
+    - Index: lore/index.md
+  - Modding: modding.md
+  - Mechanics: mechanics/index.md
   - DeepAI: deepai.md
   - Community:
-    - Contributing: contributing/index.md
+    - Contributing: community/contributing.md
+    - About: community/index.md
+    - Discord: community/discord.md
