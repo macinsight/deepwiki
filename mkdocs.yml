@@ -39,15 +39,3 @@ extra:
   analytics:
     provider: google
     property: G-QT5ZVG7KT3
-
-nav:
-  - Home: index.md
-  - Lore:
-    - Index: lore/index.md
-  - Modding: modding.md
-  - Mechanics: mechanics/index.md
-  - DeepAI: deepai.md
-  - Community:
-    - Contributing: community/contributing.md
-    - About: community/index.md
-    - Discord: community/discord.md
