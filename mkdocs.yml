@@ -1,6 +1,7 @@
 site_name: DeepNet Wiki
 site_url: https://macinsight.github.io
 repo_url: https://github.com/macinsight/deepwiki
+edit_uri: edit/main/docs/
 theme:
   name: material
   font:
@@ -8,8 +9,8 @@ theme:
     code: Red Hat Mono
   palette:
     scheme: slate
-    primary: deep purple
-    accent: deep purple
+    primary: black
+    accent: indigo
   features:
     - navigation.footer
     - navigation.instant
@@ -18,6 +19,8 @@ theme:
     - navigation.sections
     - navigation.path
     - toc.follow
+    - content.action.edit
+    - content.action.view
   icon:
     repo: fontawesome/brands/git-alt
 markdown_extensions:
@@ -33,3 +36,9 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/23Y2bZCtbP
       name: DeepNet Discord
+
+nav:
+  - Home: index.md
+  - DeepAI: deepai.md
+  - Community:
+    - Contributing: contributing/index.md
