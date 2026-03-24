@@ -36,6 +36,9 @@ extra:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/23Y2bZCtbP
       name: DeepNet Discord
+  analytics:
+    provider: google
+    property: G-QT5ZVG7KT3
 
 nav:
   - Home: index.md
