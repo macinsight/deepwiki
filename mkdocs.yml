@@ -1,5 +1,6 @@
 site_name: DeepNet Wiki
 site_url: https://macinsight.github.io
+repo_url: https://github.com/macinsight/deepwiki
 theme:
   name: material
   font:
@@ -17,6 +18,8 @@ theme:
     - navigation.sections
     - navigation.path
     - toc.follow
+  icon:
+    repo: fontawesome/brands/git-alt
 markdown_extensions:
   - admonition
   - pymdownx.details
