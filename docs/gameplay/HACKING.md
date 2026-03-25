@@ -138,4 +138,5 @@ When you are done, use `disconnect` to terminate the session safely.
 
 ---
 
-!!! warning "PLEASE NOTE" Every action you perform increases the **TRACE** level. If the trace reaches **100%**, the system will initiate a hard lockout and alert local security. **Always disconnect before you are detected.**
+!!! warning "PLEASE NOTE"
+Every action you perform increases the **TRACE** level. If the trace reaches **100%**, the system will initiate a hard lockout and alert local security. **Always disconnect before you are detected.**
