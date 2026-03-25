@@ -116,6 +116,10 @@ use `help` to display the available commands:
 `netscan` : Map the internal network
 ![Selection](assets/img9.png)
 
+`ssh` : Connect to internal hosts.
+`exit` : Return to the main target 
+![Selection](assets/img14.png)
+
 `harvest` : Extract credentials from memory.
 ![Selection](assets/img10.png)
 
@@ -128,11 +132,10 @@ use `help` to display the available commands:
 When you are done, use `disconnect` to terminate the session safely.
 ![Selection](assets/img13.png)
 ```
-[BREACH] Clean extraction. 3 file(s) exfiltrated. Type "files" to view.
+[BREACH] Clean extraction. 2 file(s) exfiltrated. Type "files" to view.
 [CAPTURE] passive signal analysis recorded 163 network signatures. saved to ~/research/
 ```
 
 ---
 
-!!! warning "PLEASE NOTE" 
-Every action you perform increases the **TRACE** level. If the trace reaches **100%**, the system will initiate a hard lockout and alert local security. **Always disconnect before you are detected.**
+!!! warning "PLEASE NOTE" Every action you perform increases the **TRACE** level. If the trace reaches **100%**, the system will initiate a hard lockout and alert local security. **Always disconnect before you are detected.**
