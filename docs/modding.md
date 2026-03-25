@@ -9,8 +9,8 @@ API-driven file-manager and bulk-seller by Rain
 ```tampermonkey
 // ==UserScript==
 // @name         DeepNet Data Dealer
-// @namespace    https://tampermonkey.net
-// @version      1.0
+// @namespace    https://macinsight.github.io/deepwiki/modding/
+// @version      1.1
 // @description  File management and bulk selling for DeepNet (API-driven)
 // @author       Rain
 // @match        https://deepnet.us/*
@@ -52,7 +52,7 @@ API-driven file-manager and bulk-seller by Rain
         window.fetch = function (...args) {
             try {
                 const url = typeof args[0] === 'string' ? args[0] : args[0]?.url;
-                if (url?.includes('api.php') && args[1]?.body) {
+                if ((url?.includes('api.php') || url?.includes('/api?')) && args[1]?.body) {
                     const b = JSON.parse(args[1].body);
                     if (b.machine_id) machineId = b.machine_id;
                     if (b.token) token = b.token;
@@ -72,10 +72,19 @@ API-driven file-manager and bulk-seller by Rain
         return [...buf].map(b => b.toString(16).padStart(2, '0')).join('');
     }
 
+    function getApiBase() {
+        // Use the game's configured API base if available, otherwise detect from endpoint
+        try {
+            if (window.CONFIG && window.CONFIG.API_BASE) return window.CONFIG.API_BASE;
+            if (window.APP_CONFIG && window.APP_CONFIG.API_BASE) return window.APP_CONFIG.API_BASE;
+        } catch (_) {}
+        return 'api';
+    }
+
     async function api(action, extra = {}) {
         if (!machineId || !token) return null;
         try {
-            const r = await _origFetch(`https://deepnet.us/api.php?action=${action}`, {
+            const r = await _origFetch(`https://deepnet.us/${getApiBase()}?action=${action}`, {
                 method: 'POST', credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ machine_id: machineId, token, request_id: reqId(), ...extra }),
@@ -95,7 +104,7 @@ API-driven file-manager and bulk-seller by Rain
     function qualityLabel(q) {
         const n = Number(q || 0);
         if (n >= 5) return { label: 'legendary', color: '#a335ee' };
-if (n >= 4) return { label: 'rare', color: '#0070dd' };
+        if (n >= 4) return { label: 'rare', color: '#0070dd' };
         if (n >= 3) return { label: 'magic', color: '#3ddc84' };
         return { label: 'normal', color: 'var(--dos-text-dim)' };
     }
@@ -583,7 +592,7 @@ if (n >= 4) return { label: 'rare', color: '#0070dd' };
             if (!isLoggedIn()) return; if (!placeUI()) return;
             clearInterval(bc);
             if (cliBtnEl) cliBtnEl.style.display = 'inline-block';
-            console.log('[SELL] v1.0 placed as', isDesktopIcon ? 'icon' : 'cli');
+            console.log('[SELL] v1.1 placed as', isDesktopIcon ? 'icon' : 'cli');
         }, 500);
     }
     setTimeout(init, 2000);
